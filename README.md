@@ -6,4 +6,4 @@ This repository stores the nix configurations for various machines.
 
 | name | description |
 | ---- | ----------- |
-|  |  |
+| chirm | Dell XPS 13 7390 |
