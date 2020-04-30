@@ -3,7 +3,6 @@
 {
   imports =
     [
-      <nixos-hardware/dell/xps/13-7390>
       ./hardware-configuration.nix
       ../../modules/base
       ../../modules/graphical
@@ -23,6 +22,11 @@
       device = "/dev/nvme0n1p2";
     };
   };
+
+  services.fstrim.enable = true;
+  services.fwupd.enable = true;
+  services.thermald.enable = true;
+  boot.kernelParams = [ "mem_sleep_default=deep" ];
 
   system.stateVersion = "20.03";
 }
