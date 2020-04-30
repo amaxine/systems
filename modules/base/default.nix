@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -18,16 +18,28 @@
   programs.gnupg.agent.enable = true;
 
   nix = {
-    binaryCaches = [
-      "https://nixcache.infra.terrible.systems/"
+    nixPath = [
+      "nixos-config=/run/current-system/systems/hosts/${config.networking.hostName}/configuration.nix"
+      "/var/run/current-system/systems" "nixpkgs-maxine=/home/maxine/Development/maxeaubrey/nixpkgs-maxine"
     ];
-    trustedBinaryCaches = [
-      "https://nixcache.infra.terrible.systems/"
-    ];
-    binaryCachePublicKeys = [
-      "nixcache.infra.terrible.systems:BXjTXh35v6pyOf6kjkhd2T2Z1hXrCa4j/64HCwbZ5Mw="
-    ];
+    useSandbox = true;
+    autoOptimiseStore = true;
+    trustedUsers = [ "@wheel" ];
+
+    #binaryCaches = [
+    #  "https://nixcache.infra.terrible.systems/"
+    #];
+    #trustedBinaryCaches = [
+    #  "https://nixcache.infra.terrible.systems/"
+    #];
+    #binaryCachePublicKeys = [
+    #  "nixcache.infra.terrible.systems:BXjTXh35v6pyOf6kjkhd2T2Z1hXrCa4j/64HCwbZ5Mw="
+    #];
   };
+
+  system.extraSystemBuilderCmds = ''
+    ln -s ${lib.cleanSource ../..} $out/systems
+  '';
 
   services.tlp.enable = true;
   services.fwupd.enable = true;
