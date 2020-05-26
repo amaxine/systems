@@ -23,10 +23,13 @@
     };
   };
 
+  boot.kernelParams = [ "mem_sleep_default=deep" ];
+
   services.fstrim.enable = true;
   services.fwupd.enable = true;
   services.thermald.enable = true;
-  boot.kernelParams = [ "mem_sleep_default=deep" ];
+
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "20.03";
 }
