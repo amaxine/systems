@@ -2,8 +2,9 @@
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Usually not needed because zfs without sync, but let's do it anyway
   boot.cleanTmpDir = true;
-  boot.plymouth.enable = true;
   console.earlySetup = true;
 
   boot.kernel.sysctl = {
@@ -12,6 +13,7 @@
 
   networking.useDHCP = false;
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -47,7 +49,6 @@
     ln -s ${lib.cleanSource ../..} $out/systems
   '';
 
-  services.tlp.enable = true;
   services.fwupd.enable = true;
   hardware.cpu.intel.updateMicrocode = true;
 

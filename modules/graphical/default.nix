@@ -4,6 +4,10 @@ let
   maxine = import <nixpkgs-maxine> { };
 in
 {
+  boot.plymouth.enable = true;
+
+  services.tlp.enable = true;
+
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
@@ -29,7 +33,7 @@ in
     two-finger-scrolling-enabled=true
 
     [org.gnome.shell]
-    enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'no-title-bar@jonaspoehler.de'] 
+    enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'no-title-bar@jonaspoehler.de', 'appindicatorsupport@rgcjonas.gmail.com]
 
     [org.gnome.desktop.interface]
     clock-show-weekday=true
