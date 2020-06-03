@@ -10,7 +10,7 @@ if [ "$#" -eq 0 ]; then
     if ! [ -f "hosts/$sys/configuration.nix" ]; then
         echo -e "\e[31;1merror:\e[0m must specify a system definition" >&2
         echo "Available system definitions are:" >&2
-        find "$nixroot/sys" -mindepth 1 -maxdepth 1 -type d | awk -F / '{print "- " $NF}' | sed 's/\.nix$//' >&2
+        find "$nixroot/hosts" -mindepth 1 -maxdepth 1 -type d | awk -F / '{print "- " $NF}' | sed 's/\.nix$//' >&2
         exit 1
     fi
 else
