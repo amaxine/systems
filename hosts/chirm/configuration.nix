@@ -11,8 +11,15 @@
   networking.hostName = "chirm";
   networking.hostId = "c53a6417";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot = {
+      configurationLimit = 10;
+      enable = true;
+      editor = false;
+    };
+    timeout = 3;
+    efi.canTouchEfiVariables = true;
+  };
 
   boot.initrd.luks.devices = {
     zfsPool = {
@@ -26,7 +33,6 @@
   boot.kernelParams = [ "mem_sleep_default=deep" ];
 
   services.fstrim.enable = true;
-  services.fwupd.enable = true;
   services.thermald.enable = true;
 
   virtualisation.docker.enable = true;
