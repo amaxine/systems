@@ -60,5 +60,6 @@
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = [ "wheel" "networkmanager" "dialout" "docker" ];
+    uid = 1002;
   };
 }
