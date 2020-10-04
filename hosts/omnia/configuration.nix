@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
       ../../modules/base
+      ../../modules/remote-builds/host
     ];
 
   networking.hostName = "omnia";
