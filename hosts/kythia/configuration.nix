@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ../../modules/base
       ../../modules/graphical
+      ../../modules/yubikey
     ];
 
   networking.hostName = "kythia";
