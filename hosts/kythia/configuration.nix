@@ -1,5 +1,8 @@
 { ... }:
 
+let
+  thermald-conf = ./thermald-conf.xml;
+in
 {
   imports =
     [
@@ -7,6 +10,8 @@
       ../../modules/base
       ../../modules/graphical
       ../../modules/yubikey
+      ../../modules/graphical/prime
+      ../../modules/remote-builds/user
     ];
 
   networking.hostName = "kythia";
@@ -31,10 +36,19 @@
     };
   };
 
-  boot.kernelParams = [ "mem_sleep_default=deep" ];
+  boot.kernelParams = [ "acpi_rev_override" ];
 
   services.fstrim.enable = true;
   services.thermald.enable = true;
+  services.thermald.configFile = thermald-conf;
+
+  services.tlp.settings = {
+    CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+  };
+
+  hardware.nvidia.modesetting.enable = true;
+  services.xserver.displayManager.gdm.nvidiaWayland = true;
 
   virtualisation.docker.enable = true;
 
