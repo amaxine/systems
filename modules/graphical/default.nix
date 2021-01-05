@@ -11,6 +11,8 @@ in
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  hardware.keyboard.zsa.enable = true;
+
   services.xserver = {
     enable = true;
     xkbOptions = "euroesign:e, caps:ctrl_modifier";
@@ -24,6 +26,7 @@ in
     gnome3.gnome-tweaks
     yaru-theme
     maxine.gnomeExtensions.no-title-bar
+    wally-cli
   ];
 
   services.xserver.libinput.enable = true;
