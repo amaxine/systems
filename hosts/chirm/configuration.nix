@@ -8,6 +8,7 @@
       ../../modules/graphical
       ../../modules/graphical/steam
       ../../modules/remote-builds/user
+      ../../modules/yubikey
     ];
 
   networking.hostName = "chirm";
