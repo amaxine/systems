@@ -77,7 +77,7 @@ in
 
   environment.gnome3.excludePackages = with pkgs.gnome3; [
     cheese epiphany geary gnome-weather gnome-music gnome-photos
-    gnome-software simple-scan yelp rygel sushi gnome-online-miners
+    gnome-software yelp rygel sushi gnome-online-miners
     gnome-remote-desktop gnome-contacts evolution-data-server
     gnome-maps
   ];

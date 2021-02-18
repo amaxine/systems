@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -9,6 +9,7 @@
       ../../modules/graphical/steam
       ../../modules/remote-builds/user
       ../../modules/yubikey
+      ../../modules/mfp
     ];
 
   networking.hostName = "chirm";
