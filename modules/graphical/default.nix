@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  maxine = import <nixpkgs-maxine> { };
-in
 {
   boot.plymouth.enable = true;
 
@@ -23,9 +20,9 @@ in
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dash-to-dock
     gnomeExtensions.appindicator
+    gnomeExtensions.no-title-bar
     gnome3.gnome-tweaks
     yaru-theme
-    maxine.gnomeExtensions.no-title-bar
     wally-cli
   ];
 
