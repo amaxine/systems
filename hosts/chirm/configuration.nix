@@ -41,9 +41,9 @@
   };
 
   fileSystems."/home/maxine/NAS" = {
-    device = "192.168.178.105:spool/home/maxine";
+    device = "sintra:storage/home/maxine";
     fsType = "nfs";
-    options = ["x-systemd.automount" "noauto"];
+    options = [ "x-systemd.automount" "noauto" "nfsvers=4.2" ];
   };
 
   boot.kernelParams = [ "mem_sleep_default=deep" ];
