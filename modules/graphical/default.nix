@@ -25,7 +25,7 @@
   ];
 
   services.xserver.libinput.enable = true;
-  services.xserver.desktopManager.gnome3.extraGSettingsOverrides = ''
+  services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
     [org.gnome.desktop.peripherals.touchpad]
     tap-to-click=true
     two-finger-scrolling-enabled=true
@@ -65,12 +65,12 @@
   '';
 
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
-  services.gnome3.tracker-miners.enable = false;
-  services.gnome3.tracker.enable = false;
+  services.gnome.tracker-miners.enable = false;
+  services.gnome.tracker.enable = false;
 
-  environment.gnome3.excludePackages = with pkgs.gnome3; [
+  environment.gnome.excludePackages = with pkgs.gnome3; [
     cheese epiphany geary gnome-weather gnome-music gnome-photos
     gnome-software yelp rygel sushi gnome-online-miners
     gnome-remote-desktop gnome-contacts evolution-data-server
