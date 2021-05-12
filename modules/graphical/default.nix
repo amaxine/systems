@@ -76,4 +76,12 @@
     gnome-remote-desktop gnome-contacts evolution-data-server
     gnome-maps
   ];
+
+  qt5 = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita";
+  };
+
+  environment.variables.QT_QPA_PLATFORM = "wayland";
 }
