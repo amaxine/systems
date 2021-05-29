@@ -31,6 +31,8 @@
 
   security.sudo.wheelNeedsPassword = false;
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   system.stateVersion = "20.09";
 }
 
