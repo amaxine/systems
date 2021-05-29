@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ../../modules/base
       ../../modules/remote-builds/host
+      ../../modules/ssh
     ];
 
   networking.hostName = "omnia";
@@ -26,15 +27,6 @@
 
   time.timeZone = "UTC";
 
-  services.openssh.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
-  users.users.maxine = {
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKDmex7rvB7BFd9OxQHfgqKogiN69kHvixCzWWEGh5oY maxine@chirm"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcIIiTEJAtLRtBiC6kIzXIYSG0noWpRFGZpdKfAdczj maxine@kythia"
-    ];
-  };
   virtualisation.docker.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
