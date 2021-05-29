@@ -33,6 +33,11 @@
       fsType = "zfs";
     };
 
+  fileSystems."/var/lib/docker" =
+    { device = "/dev/sda1";
+      fsType = "ext4";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/7fb53fbf-d7a8-4784-8ac0-8bb58dcea813"; }
     ];

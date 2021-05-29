@@ -35,6 +35,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcIIiTEJAtLRtBiC6kIzXIYSG0noWpRFGZpdKfAdczj maxine@kythia"
     ];
   };
+  virtualisation.docker.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
 
