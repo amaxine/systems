@@ -53,5 +53,7 @@ in
   virtualisation.docker.enable = true;
 
   system.stateVersion = "21.03";
+
+  security.pki.certificateFiles = [ /home/maxine/ca.crt.pem ];
 }
 
