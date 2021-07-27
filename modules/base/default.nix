@@ -14,6 +14,7 @@
   networking.useDHCP = false;
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
+  services.resolved.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
