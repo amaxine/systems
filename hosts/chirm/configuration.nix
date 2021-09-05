@@ -4,7 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../../modules/base
+      ../../modules/default
       ../../modules/graphical
       ../../modules/graphical/steam
       ../../modules/remote-builds/user

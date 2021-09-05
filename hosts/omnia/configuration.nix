@@ -4,7 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../../modules/base
+      ../../modules/default
       ../../modules/remote-builds/host
       ../../modules/ssh
     ];
