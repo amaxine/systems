@@ -7,6 +7,7 @@
       ../../modules/default
       ../../modules/remote-builds/host
       ../../modules/ssh
+      ../../modules/vpn
     ];
 
   networking.hostName = "omnia";

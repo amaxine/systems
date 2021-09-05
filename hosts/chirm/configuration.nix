@@ -10,6 +10,7 @@
       ../../modules/remote-builds/user
       ../../modules/yubikey
       ../../modules/mfp
+      ../../modules/vpn
     ];
 
   networking.hostName = "chirm";
