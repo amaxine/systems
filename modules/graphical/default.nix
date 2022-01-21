@@ -71,7 +71,7 @@
   services.gnome.tracker.enable = false;
 
   environment.gnome.excludePackages = with pkgs.gnome3; [
-    cheese epiphany geary gnome-weather gnome-music gnome-photos
+    cheese epiphany geary gnome-weather gnome-music
     gnome-software yelp rygel sushi gnome-online-miners
     gnome-remote-desktop gnome-contacts evolution-data-server
     gnome-maps
