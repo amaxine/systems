@@ -4,14 +4,14 @@
   nix = {
     buildMachines = [
       {
-        hostName = "ssh://remote-build-user@omnia";
+        hostName = "ssh://remote-build-user@omnia.home.arpa";
         system = "x86_64-linux";
         maxJobs = 8;
         speedFactor = 2;
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
       }
       {
-        hostName = "ssh://remote-build-user@sintra";
+        hostName = "ssh://remote-build-user@sintra.home.arpa";
         system = "x86_64-linux";
         maxJobs = 24;
         speedFactor = 5;
