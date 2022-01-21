@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_5_15;
 
   # Usually not needed because zfs without sync, but let's do it anyway
   boot.cleanTmpDir = true;
