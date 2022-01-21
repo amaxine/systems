@@ -20,7 +20,7 @@
 
   environment.systemPackages = with pkgs; [
     lsof htop nmap vim wget lm_sensors
-    home-manager
+    home-manager kind
   ];
 
   programs.mtr.enable = true;
