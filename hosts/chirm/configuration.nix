@@ -42,9 +42,14 @@
   };
 
   fileSystems."/home/maxine/NAS" = {
-    device = "sintra:storage/home/maxine";
+    device = "sintra.home.arpa:storage/home/maxine";
     fsType = "nfs";
     options = [ "x-systemd.automount" "noauto" "nfsvers=4.2" ];
+  };
+
+  fileSystems."/var/lib/docker" = {
+    device = "/home/maxine/docker.img";
+    fsType = "ext4";
   };
 
   boot.kernelParams = [
