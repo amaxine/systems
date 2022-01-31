@@ -60,7 +60,7 @@
   users.users.maxine = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" "dialout" "docker" "plugdev" ];
+    extraGroups = [ "wheel" "networkmanager" "dialout" "docker" "plugdev" "cdrom" ];
     uid = 1002;
   };
 }
