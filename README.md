@@ -8,6 +8,7 @@ This repository stores the nix configurations for various machines.
 | ---- | ----------- |
 | chirm | Dell XPS 13 7390 |
 | omnia | Intel Core i7-8559U |
+| morpork | AMD Ryzen 5 3600, etc. |
 
 ## Handy reminders
 
