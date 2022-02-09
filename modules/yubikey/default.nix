@@ -1,7 +1,22 @@
 { pkgs, ... }:
 
 {
-    services.udev.packages = [ pkgs.yubikey-personalization pkgs.libu2f-host ];
+  services.udev.packages = with pkgs; [ 
+    yubikey-personalization
+    libu2f-host
+  ];
 
-    services.pcscd.enable = true;
+  security.pam = {
+    u2f = {
+      authFile = "/etc/u2f_mappings";
+      control = "sufficient";
+      cue = true;
+    };
+
+    services.sudo = {
+      u2fAuth = true;
+    };
+  };
+
+  services.pcscd.enable = true;
 }
