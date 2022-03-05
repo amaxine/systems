@@ -48,7 +48,7 @@
   };
 
   fileSystems."/var/lib/docker" = {
-    device = "/home/maxine/docker.img";
+    device = "/mnt/docker.img";
     fsType = "ext4";
   };
 
