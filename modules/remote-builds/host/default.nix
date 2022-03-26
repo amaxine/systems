@@ -8,5 +8,5 @@
     ];
   };
 
-  nix.trustedUsers = [ "remote-build-user" ];
+  nix.settings.trusted-users = [ "remote-build-user" ];
 }
