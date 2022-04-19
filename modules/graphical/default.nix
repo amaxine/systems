@@ -16,6 +16,7 @@
   console.useXkbConfig = true;
 
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.appindicator
     gnome.gnome-tweaks
     gnome.gnome-terminal
     yaru-theme
@@ -42,9 +43,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  services.gnome.tracker-miners.enable = false;
-  services.gnome.tracker.enable = false;
-
   environment.gnome.excludePackages = with pkgs.gnome; [
     cheese epiphany geary gnome-weather gnome-music
     gnome-software yelp rygel sushi gnome-online-miners
@@ -60,9 +58,14 @@
 
   environment.variables.QT_QPA_PLATFORM = "wayland";
 
+  programs._1password = {
+    enable = true;
+    gid = 5001;
+  };
+
   programs._1password-gui = {
     enable = true;
-    groupId = 5000;
+    gid = 5000;
     polkitPolicyOwners = [ "maxine" ];
   };
 }
