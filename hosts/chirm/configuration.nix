@@ -54,7 +54,6 @@
 
   boot.kernelParams = [
     "mem_sleep_default=deep"
-    "i915.enable_guc=2"
   ];
 
   services.fstrim.enable = true;
