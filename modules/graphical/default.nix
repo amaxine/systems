@@ -67,12 +67,11 @@
 
   programs._1password = {
     enable = true;
-    gid = 5001;
   };
 
   programs._1password-gui = {
     enable = true;
-    gid = 5000;
     polkitPolicyOwners = [ "maxine" ];
+    package = pkgs._1password-gui-beta;
   };
 }
