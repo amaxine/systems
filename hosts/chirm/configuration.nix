@@ -44,7 +44,7 @@
   fileSystems."/home/maxine/NAS" = {
     device = "sintra.home.arpa:storage/home/maxine";
     fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "nfsvers=4.2" ];
+    options = [ "x-systemd.automount" "noauto" "nfsvers=4.2" "_netdev" "x-systemd.device-timeout=10" ];
   };
 
   fileSystems."/var/lib/docker" = {
