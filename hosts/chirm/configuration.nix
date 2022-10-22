@@ -5,8 +5,8 @@
     [
       ./hardware-configuration.nix
       ../../modules/default
+      ../../modules/hardware/intel.nix
       ../../modules/graphical
-      ../../modules/graphical/steam
       ../../modules/remote-builds/user
       ../../modules/yubikey
       ../../modules/mfp

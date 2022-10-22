@@ -18,7 +18,7 @@ else
     shift
 fi
 
-export NIX_PATH=nixos-config=$nixroot/hosts/$sys/configuration.nix:nixpkgs-maxine=/home/maxine/Development/maxeaubrey/nixpkgs-maxine:$nixroot
+export NIX_PATH=nixos-config=$nixroot/hosts/$sys/configuration.nix:$nixroot
 linkdir="$(mktemp -d)"
 link="$linkdir/result"
 nix --extra-experimental-features nix-command build -f '<nixpkgs/nixos>' --out-link "$link" "$@" system
@@ -26,4 +26,3 @@ path="$(readlink "$link")"
 nix-env -p /nix/var/nix/profiles/system --set "$path"
 rm -rf "$linkdir"
 exec "$path/bin/switch-to-configuration" switch
-
