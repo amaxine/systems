@@ -5,7 +5,6 @@
 
   sound.enable = false;
   hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -13,12 +12,18 @@
     pulse.enable = true;
   };
 
+  networking.useDHCP = false;
+  networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
+
   hardware.keyboard.zsa.enable = true;
 
   services.xserver = {
     enable = true;
     xkbOptions = "euroesign:e, caps:ctrl_modifier";
   };
+
+  security.rtkit.enable = true;
 
   console.useXkbConfig = true;
 
@@ -64,6 +69,7 @@
   };
 
   environment.variables.QT_QPA_PLATFORM = "wayland";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs._1password = {
     enable = true;

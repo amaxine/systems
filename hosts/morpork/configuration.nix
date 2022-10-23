@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ../../modules/default
+      ../../modules/hardware/amd.nix
       ../../modules/graphical
       ../../modules/mfp
       ../../modules/yubikey
