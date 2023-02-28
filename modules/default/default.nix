@@ -7,7 +7,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_5_15;
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
 
   # Usually not needed because zfs without sync, but let's do it anyway
   boot.cleanTmpDir = true;
