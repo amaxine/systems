@@ -3,8 +3,10 @@
 {
   services.openssh = {
     enable = true;
-    permitRootLogin = "no";
-    passwordAuthentication = false;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
     extraConfig = "StreamLocalBindUnlink yes";
   };
 
