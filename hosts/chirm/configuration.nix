@@ -32,6 +32,8 @@
     efi.canTouchEfiVariables = true;
   };
 
+  boot.initrd.systemd.enable = true;
+
   boot.initrd.luks.devices = {
     zfsPool = {
       device = "/dev/nvme0n1p1";
@@ -61,7 +63,7 @@
 
   virtualisation.docker.enable = true;
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  #boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   system.stateVersion = "20.03";
 }
