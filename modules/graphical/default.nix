@@ -29,6 +29,7 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
+    gnomeExtensions.tailscale-status
     gnome.gnome-tweaks
     gnome.gnome-terminal
     yaru-theme
